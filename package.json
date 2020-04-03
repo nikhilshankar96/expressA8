@@ -1,0 +1,28 @@
+{
+	"name": "expressa8",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index",
+		"dev": "nodemon index",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nikhilshankar96/expressA8.git"
+	},
+	"author": "Nikhil Shankar",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/nikhilshankar96/expressA8/issues"
+	},
+	"homepage": "https://github.com/nikhilshankar96/expressA8#readme",
+	"dependencies": {
+		"express": "^4.17.1",
+		"moment": "^2.24.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.2"
+	}
+}
