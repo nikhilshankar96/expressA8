@@ -1,25 +1,32 @@
+require("./db/db");
 const express = require("express");
 const path = require("path");
 const logger = require("./middleware/logger");
-// const router = requir
 
+const bodyParser = require("body-parser");
+//
+const user = require("./routes/userRoutes");
+//
 const app = express();
 
 const PORT = process.env.PORT || 5000;
 
-//middleware
+//exception handling
+process.on("uncaughtException", function (err) {
+	console.error(err);
+	console.log("Node NOT Exiting...");
+});
 
+//middleware
 //init middleware
 app.use(logger);
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 //routes
-app.use("/api/members", require("./routes/api/members"));
+app.use("/user", user);
 
-//set static folder
-app.use(express.static(path.join(__dirname, "public")));
-
+//port
 app.listen(PORT, () => {
 	console.log(`Server started on port: ${PORT}`);
 });
